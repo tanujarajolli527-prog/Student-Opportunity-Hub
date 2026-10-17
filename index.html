@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Opportunity Hub</title>
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3135/3135755.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ========================================== -->
+    <!-- 1. LOGIN SCREEN GATEKEEPER                 -->
+    <!-- ========================================== -->
+    <div id="login-screen" class="auth-wrapper">
+        <div class="auth-card">
+            <div class="auth-header">
+                <i class="fa-solid fa-graduation-cap auth-icon"></i>
+                <h2>Opportunity Hub</h2>
+            </div>
+            <p class="auth-subtitle">Sign in or create an account to access premium student opportunities.</p>
+            
+            <div class="auth-form">
+                <input type="email" id="email" placeholder="Student Email Address" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button id="submitAuth" class="btn-primary auth-btn">Secure Login</button>
+                <p id="authError" class="error-text"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 2. MAIN APPLICATION (Hidden by default)    -->
+    <!-- ========================================== -->
+    <div id="main-app" style="display: none;">
+        
+        <!-- Navigation Bar -->
+        <header class="navbar">
+            <div class="nav-container">
+                <a href="#" id="nav-logo" class="logo">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>Opportunity Hub</span>
+                </a>
+                
+                <input type="checkbox" id="nav-toggle" class="nav-toggle">
+                <label for="nav-toggle" class="nav-toggle-label"><i class="fa-solid fa-bars"></i></label>
+                
+                <nav class="nav-links">
+                    <a href="#home" class="nav-switch">Home</a>
+                    <a href="#scholarships" class="nav-switch">Scholarships</a>
+                    <a href="#internships" class="nav-switch">Internships</a>
+                    <a href="#hackathons" class="nav-switch">Hackathons</a>
+                    <a href="#courses" class="nav-switch">Free Courses</a>
+                    <a href="#" id="dashBtn" style="color: var(--secondary-color); font-weight: 600;"><i class="fa-solid fa-user"></i> My Dashboard</a>
+                    <a href="#" id="logoutBtn" style="color: #ef4444; font-weight:600;">Logout</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- ========================================== -->
+        <!-- 3. MAIN HOMEPAGE CONTENT                   -->
+        <!-- ========================================== -->
+        <div id="main-content">
+            <!-- Hero Section -->
+            <section id="home" class="hero">
+                <div class="hero-content">
+                    <h1>Discover Opportunities. <br><span class="highlight">Build Your Future.</span></h1>
+                    <p>Find scholarships, internships, hackathons, and free learning resources—all in one professional platform.</p>
+                    <div class="hero-buttons" style="margin-top: 2rem;">
+                        <a href="#scholarships" class="btn-primary"><i class="fa-solid fa-money-check-dollar"></i> Explore Scholarships</a>
+                        <a href="#internships" class="btn-outline"><i class="fa-solid fa-briefcase"></i> Explore Internships</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Categories Section -->
+            <section id="categories" class="section-padding bg-light">
+                <div class="container">
+                    <h2 class="section-title">Browse Categories</h2>
+                    <div class="grid-4">
+                        <div class="category-card"><div class="icon-wrapper"><i class="fa-solid fa-award"></i></div><h3>Scholarships</h3><a href="#scholarships" class="card-link nav-switch">Explore <i class="fa-solid fa-arrow-right"></i></a></div>
+                        <div class="category-card"><div class="icon-wrapper"><i class="fa-solid fa-laptop-code"></i></div><h3>Internships</h3><a href="#internships" class="card-link nav-switch">Explore <i class="fa-solid fa-arrow-right"></i></a></div>
+                        <div class="category-card"><div class="icon-wrapper"><i class="fa-solid fa-rocket"></i></div><h3>Hackathons</h3><a href="#hackathons" class="card-link nav-switch">Explore <i class="fa-solid fa-arrow-right"></i></a></div>
+                        <div class="category-card"><div class="icon-wrapper"><i class="fa-solid fa-book-open"></i></div><h3>Free Courses</h3><a href="#courses" class="card-link nav-switch">Explore <i class="fa-solid fa-arrow-right"></i></a></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SCHOLARSHIPS SECTION -->
+            <section id="scholarships" class="section-padding">
+                <div class="container">
+                    <h2 class="section-title">Latest Scholarships</h2>
+                    <div class="grid-3">
+                        <div class="opportunity-card">
+                            <div class="card-badge">Govt of India</div>
+                            <h3>National Scholarship Portal</h3>
+                            <p class="desc">Central Scheme of Scholarship for College and University Students.</p>
+                            <a href="https://scholarships.gov.in/" target="_blank" class="btn-block">Official Details</a>
+                            <button class="btn-block btn-save" data-title="National Scholarship Portal">+ Save to Dashboard</button>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="card-badge bg-accent">Corporate</div>
+                            <h3>Reliance Foundation Scholarship</h3>
+                            <p class="desc">Merit-cum-means scholarship for undergraduate students.</p>
+                            <a href="https://www.buddy4study.com/" target="_blank" class="btn-block">Official Details</a>
+                            <button class="btn-block btn-save" data-title="Reliance Foundation Scholarship">+ Save to Dashboard</button>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="card-badge">Govt of Karnataka</div>
+                            <h3>SSP Post Matric Scholarship</h3>
+                            <p class="desc">Financial assistance for SC/ST, OBC, and minority students in Karnataka.</p>
+                            <a href="https://ssp.postmatric.karnataka.gov.in/" target="_blank" class="btn-block">Official Details</a>
+                            <button class="btn-block btn-save" data-title="SSP Post Matric Karnataka">+ Save to Dashboard</button>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="card-badge bg-accent">AICTE</div>
+                            <h3>Pragati Scholarship for Girls</h3>
+                            <p class="desc">Empowering girl students pursuing technical education (Degree/Diploma).</p>
+                            <a href="https://www.aicte-india.org/" target="_blank" class="btn-block">Official Details</a>
+                            <button class="btn-block btn-save" data-title="AICTE Pragati Scholarship">+ Save to Dashboard</button>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="card-badge">Banking</div>
+                            <h3>HDFC Bank Parivartan's ECS</h3>
+                            <p class="desc">Educational Crisis Scholarship for students unable to bear education costs.</p>
+                            <a href="https://www.buddy4study.com/" target="_blank" class="btn-block">Official Details</a>
+                            <button class="btn-block btn-save" data-title="HDFC Parivartan ECS">+ Save to Dashboard</button>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="card-badge bg-accent">Corporate</div>
+                            <h3>Kotak Kanya Scholarship</h3>
+                            <p class="desc">Financial aid for meritorious girl students from low-income families.</p>
+                            <a href="https://www.buddy4study.com/" target="_blank" class="btn-block">Official Details</a>
+                            <button class="btn-block btn-save" data-title="Kotak Kanya Scholarship">+ Save to Dashboard</button>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="card-badge">PSU</div>
+                            <h3>LIC Golden Jubilee Scholarship</h3>
+                            <p class="desc">For students belonging to economically weaker families for higher studies.</p>
+                            <a href="https://licindia.in/" target="_blank" class="btn-block">Official Details</a>
+                            <button class="btn-block btn-save" data-title="LIC Golden Jubilee">+ Save to Dashboard</button>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="card-badge bg-accent">Corporate</div>
+                            <h3>Tata Capital Pankh Scholarship</h3>
+                            <p class="desc">Supports the higher education of students from economically weaker sections.</p>
+                            <a href="https://www.buddy4study.com/" target="_blank" class="btn-block">Official Details</a>
+                            <button class="btn-block btn-save" data-title="Tata Capital Pankh">+ Save to Dashboard</button>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="card-badge">Foundation</div>
+                            <h3>Vidyadhan Scholarship</h3>
+                            <p class="desc">Sponsored by Sarojini Damodaran Foundation for college students.</p>
+                            <a href="https://www.vidyadhan.org/" target="_blank" class="btn-block">Official Details</a>
+                            <button class="btn-block btn-save" data-title="Vidyadhan Scholarship">+ Save to Dashboard</button>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="card-badge bg-accent">Corporate</div>
+                            <h3>L'Oréal India For Young Women In Science</h3>
+                            <p class="desc">Encourages young women to pursue graduation in science fields.</p>
+                            <a href="https://www.loreal.com/" target="_blank" class="btn-block">Official Details</a>
+                            <button class="btn-block btn-save" data-title="L'Oreal Science Scholarship">+ Save to Dashboard</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- INTERNSHIPS SECTION -->
+            <section id="internships" class="section-padding bg-light">
+                <div class="container">
+                    <h2 class="section-title">Internship Opportunities</h2>
+                    <div class="grid-3">
+                        <div class="opportunity-card">
+                            <div class="card-badge bg-accent">Software Eng</div>
+                            <h3>Google STEP Internship</h3>
+                            <p class="desc">Student Training in Engineering Program for 1st/2nd-year CS students.</p>
+                            <a href="https://buildyourfuture.withgoogle.com" target="_blank" class="btn-block btn-outline">Check Openings</a>
+                            <button class="btn-block btn-save" data-title="Google STEP Internship">+ Save to Dashboard</button>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="card-badge">Govt Initiative</div>
+                            <h3>AICTE Corporate Internships</h3>
+                            <p class="desc">Internships provided by Cisco, IBM, and AWS in emerging tech fields.</p>
+                            <a href="https://internship.aicte-india.org/" target="_blank" class="btn-block btn-outline">Search Portal</a>
+                            <button class="btn-block btn-save" data-title="AICTE Internships">+ Save to Dashboard</button>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="card-badge bg-accent">Mentorship</div>
+                            <h3>Microsoft Engage Program</h3>
+                            <p class="desc">Mentorship and internship opportunity for engineering students.</p>
+                            <a href="https://careers.microsoft.com/" target="_blank" class="btn-block btn-outline">Check Openings</a>
+                            <button class="btn-block btn-save" data-title="Microsoft Engage">+ Save to Dashboard</button>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="card-badge">For Women</div>
+                            <h3>Amazon WOW (Women of the World)</h3>
+                            <p class="desc">Networking platform and internship pathway for women in tech.</p>
+                            <a href="https://amazonwowindia.splashthat.com/" target="_blank" class="btn-block btn-outline">Check Openings</a>
+                            <button class="btn-block btn-save" data-title="Amazon WOW">+ Save to Dashboard</button>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="card-badge bg-accent">Research</div>
+                            <h3>TCS Research Internships</h3>
+                            <p class="desc">Work on cutting-edge R&D projects in AI, ML, and systems design.</p>
+                            <a href="https://www.tcs.com/careers" target="_blank" class="btn-block btn-outline">Check Openings</a>
+                            <button class="btn-block btn-save" data-title="TCS Research Intern">+ Save to Dashboard</button>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="card-badge">Software Eng</div>
+                            <h3>Cisco Ideathon Intern</h3>
+                            <p class="desc">Pathway to landing a software or network engineering internship.</p>
+                            <a href="https://jobs.cisco.com/" target="_blank" class="btn-block btn-outline">Check Openings</a>
+                            <button class="btn-block btn-save" data-title="Cisco Ideathon">+ Save to Dashboard</button>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="card-badge bg-accent">Finance/Tech</div>
+                            <h3>Goldman Sachs Summer Analyst</h3>
+                            <p class="desc">Intensive 10-week summer internship program for pre-final year students.</p>
+                            <a href="https://www.goldmansachs.com/careers/" target="_blank" class="btn-block btn-outline">Check Openings</a>
+                            <button class="btn-block btn-save" data-title="Goldman Sachs Analyst">+ Save to Dashboard</button>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="card-badge">Consulting</div>
+                            <h3>Deloitte Technology Consulting Intern</h3>
+                            <p class="desc">Help clients solve complex business challenges using modern tech.</p>
+                            <a href="https://jobs2.deloitte.com/" target="_blank" class="btn-block btn-outline">Check Openings</a>
+                            <button class="btn-block btn-save" data-title="Deloitte Tech Intern">+ Save to Dashboard</button>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="card-badge bg-accent">E-Commerce</div>
+                            <h3>Flipkart Runway</h3>
+                            <p class="desc">Early career program for female engineers in their sophomore year.</p>
+                            <a href="https://flipkartcareers.com/" target="_blank" class="btn-block btn-outline">Check Openings</a>
+                            <button class="btn-block btn-save" data-title="Flipkart Runway">+ Save to Dashboard</button>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="card-badge">Software Eng</div>
+                            <h3>JP Morgan Chase Software Intern</h3>
+                            <p class="desc">Build scalable software solutions for the global financial sector.</p>
+                            <a href="https://careers.jpmorgan.com/" target="_blank" class="btn-block btn-outline">Check Openings</a>
+                            <button class="btn-block btn-save" data-title="JP Morgan Software Intern">+ Save to Dashboard</button>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="card-badge bg-accent">For Women</div>
+                            <h3>Atlassian Women in Tech Intern</h3>
+                            <p class="desc">Dedicated internship hiring drive for female coders and engineers.</p>
+                            <a href="https://www.atlassian.com/company/careers" target="_blank" class="btn-block btn-outline">Check Openings</a>
+                            <button class="btn-block btn-save" data-title="Atlassian Women in Tech">+ Save to Dashboard</button>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="card-badge">Cloud/AI</div>
+                            <h3>IBM SkillsBuild Internships</h3>
+                            <p class="desc">Free virtual internships in AI, Cloud, and Cybersecurity via AICTE.</p>
+                            <a href="https://skillsbuild.org/" target="_blank" class="btn-block btn-outline">Check Openings</a>
+                            <button class="btn-block btn-save" data-title="IBM SkillsBuild">+ Save to Dashboard</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- HACKATHONS SECTION -->
+            <section id="hackathons" class="section-padding">
+                <div class="container">
+                    <h2 class="section-title">Upcoming Hackathons</h2>
+                    <div class="grid-3">
+                        <div class="opportunity-card">
+                            <div class="card-badge">National</div>
+                            <h3>Smart India Hackathon (SIH)</h3>
+                            <p class="desc">World's biggest open innovation model for students to solve real problems.</p>
+                            <a href="https://www.sih.gov.in/" target="_blank" class="btn-block">Official Details</a>
+                            <button class="btn-block btn-save" data-title="Smart India Hackathon">+ Save to Dashboard</button>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="card-badge bg-accent">Global</div>
+                            <h3>TCS CodeVita</h3>
+                            <p class="desc">Global programming contest to identify passionate coders.</p>
+                            <a href="https://codevita.tcs.com/" target="_blank" class="btn-block">Official Details</a>
+                            <button class="btn-block btn-save" data-title="TCS CodeVita">+ Save to Dashboard</button>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="card-badge">Corporate</div>
+                            <h3>Flipkart GRiD</h3>
+                            <p class="desc">Flagship engineering campus challenge covering InfoSec and Robotics.</p>
+                            <a href="https://unstop.com/" target="_blank" class="btn-block">Official Details</a>
+                            <button class="btn-block btn-save" data-title="Flipkart GRiD">+ Save to Dashboard</button>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="card-badge bg-accent">Open Source</div>
+                            <h3>Hacktoberfest</h3>
+                            <p class="desc">Month-long celebration of open-source software hosted by DigitalOcean.</p>
+                            <a href="https://hacktoberfest.com/" target="_blank" class="btn-block">Official Details</a>
+                            <button class="btn-block btn-save" data-title="Hacktoberfest">+ Save to Dashboard</button>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="card-badge">Corporate</div>
+                            <h3>Google Girl Hackathon</h3>
+                            <p class="desc">Program for women in engineering to showcase their coding skills.</p>
+                            <a href="https://buildyourfuture.withgoogle.com/" target="_blank" class="btn-block">Official Details</a>
+                            <button class="btn-block btn-save" data-title="Google Girl Hackathon">+ Save to Dashboard</button>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="card-badge bg-accent">Global</div>
+                            <h3>Microsoft Imagine Cup</h3>
+                            <p class="desc">Global competition empowering students to build AI-driven solutions.</p>
+                            <a href="https://imaginecup.microsoft.com/" target="_blank" class="btn-block">Official Details</a>
+                            <button class="btn-block btn-save" data-title="Microsoft Imagine Cup">+ Save to Dashboard</button>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="card-badge">Web3</div>
+                            <h3>EthIndia</h3>
+                            <p class="desc">Asia's biggest Ethereum hackathon for Web3 developers.</p>
+                            <a href="https://ethindia.co/" target="_blank" class="btn-block">Official Details</a>
+                            <button class="btn-block btn-save" data-title="EthIndia Hackathon">+ Save to Dashboard</button>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="card-badge bg-accent">Global</div>
+                            <h3>NASA Space Apps Challenge</h3>
+                            <p class="desc">International hackathon using NASA's open data to solve earthly problems.</p>
+                            <a href="https://www.spaceappschallenge.org/" target="_blank" class="btn-block">Official Details</a>
+                            <button class="btn-block btn-save" data-title="NASA Space Apps">+ Save to Dashboard</button>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="card-badge">Community</div>
+                            <h3>Devfolio Hackathons</h3>
+                            <p class="desc">Explore hundreds of community-run collegiate hackathons across India.</p>
+                            <a href="https://devfolio.co/hackathons" target="_blank" class="btn-block">Official Details</a>
+                            <button class="btn-block btn-save" data-title="Devfolio Hackathons">+ Save to Dashboard</button>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="card-badge bg-accent">Global</div>
+                            <h3>IBM Call for Code</h3>
+                            <p class="desc">Global initiative challenging developers to solve global societal issues.</p>
+                            <a href="https://developer.ibm.com/callforcode/" target="_blank" class="btn-block">Official Details</a>
+                            <button class="btn-block btn-save" data-title="IBM Call for Code">+ Save to Dashboard</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FREE COURSES SECTION -->
+            <section id="courses" class="section-padding bg-light">
+                <div class="container">
+                    <h2 class="section-title">Free Courses & Certifications</h2>
+                    <div class="grid-3">
+                        <div class="opportunity-card"><div class="card-badge">Harvard/edX</div><h3>CS50: Intro to Computer Science</h3><p class="desc">Harvard's legendary free coding bootcamp covering C, Python, SQL.</p><a href="https://pll.harvard.edu/course/cs50-introduction-computer-science" target="_blank" class="btn-block btn-outline">Start Course</a><button class="btn-block btn-save" data-title="Harvard CS50">+ Save to Dashboard</button></div>
+                        <div class="opportunity-card"><div class="card-badge bg-accent">Coursera</div><h3>Google Data Analytics</h3><p class="desc">Free access to Google's professional data analytics certification.</p><a href="https://www.coursera.org/professional-certificates/google-data-analytics" target="_blank" class="btn-block btn-outline">Start Course</a><button class="btn-block btn-save" data-title="Google Data Analytics">+ Save to Dashboard</button></div>
+                        <div class="opportunity-card"><div class="card-badge">Coursera</div><h3>IBM Data Science Professional</h3><p class="desc">Master Python, SQL, and Machine Learning with IBM.</p><a href="https://www.coursera.org/professional-certificates/ibm-data-science" target="_blank" class="btn-block btn-outline">Start Course</a><button class="btn-block btn-save" data-title="IBM Data Science">+ Save to Dashboard</button></div>
+                        <div class="opportunity-card"><div class="card-badge bg-accent">Govt of India</div><h3>NPTEL: Programming in Java</h3><p class="desc">Free IIT-certified course for mastering Java concepts.</p><a href="https://nptel.ac.in/" target="_blank" class="btn-block btn-outline">Start Course</a><button class="btn-block btn-save" data-title="NPTEL Java">+ Save to Dashboard</button></div>
+                        <div class="opportunity-card"><div class="card-badge">Coursera</div><h3>Stanford Machine Learning</h3><p class="desc">Andrew Ng's world-famous introduction to Machine Learning.</p><a href="https://www.coursera.org/specializations/machine-learning-introduction" target="_blank" class="btn-block btn-outline">Start Course</a><button class="btn-block btn-save" data-title="Stanford ML">+ Save to Dashboard</button></div>
+                        <div class="opportunity-card"><div class="card-badge bg-accent">Coursera</div><h3>Meta Front-End Developer</h3><p class="desc">Learn React, HTML, and CSS directly from Meta engineers.</p><a href="https://www.coursera.org/professional-certificates/meta-front-end-developer" target="_blank" class="btn-block btn-outline">Start Course</a><button class="btn-block btn-save" data-title="Meta Front-End">+ Save to Dashboard</button></div>
+                        <div class="opportunity-card"><div class="card-badge">AWS</div><h3>AWS Cloud Practitioner</h3><p class="desc">Free official training from Amazon for cloud fundamentals.</p><a href="https://explore.skillbuilder.aws/" target="_blank" class="btn-block btn-outline">Start Course</a><button class="btn-block btn-save" data-title="AWS Cloud Practitioner">+ Save to Dashboard</button></div>
+                        <div class="opportunity-card"><div class="card-badge bg-accent">Microsoft</div><h3>Azure Fundamentals (AZ-900)</h3><p class="desc">Free learning paths for mastering Microsoft Azure Cloud.</p><a href="https://learn.microsoft.com/" target="_blank" class="btn-block btn-outline">Start Course</a><button class="btn-block btn-save" data-title="Azure Fundamentals">+ Save to Dashboard</button></div>
+                        <div class="opportunity-card"><div class="card-badge">Google</div><h3>Fundamentals of Digital Marketing</h3><p class="desc">Free certification from Google Digital Garage.</p><a href="https://skillshop.exceedlms.com/" target="_blank" class="btn-block btn-outline">Start Course</a><button class="btn-block btn-save" data-title="Google Digital Marketing">+ Save to Dashboard</button></div>
+                        <div class="opportunity-card"><div class="card-badge bg-accent">Cisco</div><h3>CCNA: Intro to Networks</h3><p class="desc">Free Networking Academy course for IT infrastructure.</p><a href="https://skillsforall.com/" target="_blank" class="btn-block btn-outline">Start Course</a><button class="btn-block btn-save" data-title="Cisco CCNA">+ Save to Dashboard</button></div>
+                        <div class="opportunity-card"><div class="card-badge">Cisco</div><h3>Intro to Cybersecurity</h3><p class="desc">Learn how to protect networks and data from cyber attacks.</p><a href="https://skillsforall.com/" target="_blank" class="btn-block btn-outline">Start Course</a><button class="btn-block btn-save" data-title="Cisco Cybersecurity">+ Save to Dashboard</button></div>
+                        <div class="opportunity-card"><div class="card-badge bg-accent">freeCodeCamp</div><h3>Responsive Web Design</h3><p class="desc">300 hours of free curriculum to build stunning websites.</p><a href="https://www.freecodecamp.org/" target="_blank" class="btn-block btn-outline">Start Course</a><button class="btn-block btn-save" data-title="freeCodeCamp Web Design">+ Save to Dashboard</button></div>
+                        <div class="opportunity-card"><div class="card-badge">freeCodeCamp</div><h3>JS Algorithms & Data Structures</h3><p class="desc">Master Javascript logic for technical interviews.</p><a href="https://www.freecodecamp.org/" target="_blank" class="btn-block btn-outline">Start Course</a><button class="btn-block btn-save" data-title="JS Algorithms">+ Save to Dashboard</button></div>
+                        <div class="opportunity-card"><div class="card-badge bg-accent">Infosys</div><h3>Springboard: AI/ML</h3><p class="desc">Free tech courses tailored for Indian engineering students.</p><a href="https://infyspringboard.onwingspan.com/" target="_blank" class="btn-block btn-outline">Start Course</a><button class="btn-block btn-save" data-title="Infosys AI/ML">+ Save to Dashboard</button></div>
+                        <div class="opportunity-card"><div class="card-badge">TCS iON</div><h3>Career Edge: Young Professional</h3><p class="desc">15-day free course to enhance soft skills and employability.</p><a href="https://learning.tcsionhub.in/" target="_blank" class="btn-block btn-outline">Start Course</a><button class="btn-block btn-save" data-title="TCS Career Edge">+ Save to Dashboard</button></div>
+                        <div class="opportunity-card"><div class="card-badge bg-accent">Kaggle</div><h3>Intro to Python</h3><p class="desc">Fast-paced, hands-on Python course for data science.</p><a href="https://www.kaggle.com/learn" target="_blank" class="btn-block btn-outline">Start Course</a><button class="btn-block btn-save" data-title="Kaggle Python">+ Save to Dashboard</button></div>
+                        <div class="opportunity-card"><div class="card-badge">Kaggle</div><h3>Intro to SQL</h3><p class="desc">Learn database querying for data analysis in hours.</p><a href="https://www.kaggle.com/learn" target="_blank" class="btn-block btn-outline">Start Course</a><button class="btn-block btn-save" data-title="Kaggle SQL">+ Save to Dashboard</button></div>
+                        <div class="opportunity-card"><div class="card-badge bg-accent">Coursera</div><h3>AI For Everyone</h3><p class="desc">Non-technical introduction to AI by deeplearning.ai.</p><a href="https://www.coursera.org/learn/ai-for-everyone" target="_blank" class="btn-block btn-outline">Start Course</a><button class="btn-block btn-save" data-title="AI For Everyone">+ Save to Dashboard</button></div>
+                        <div class="opportunity-card"><div class="card-badge">Scrimba</div><h3>Learn React for Free</h3><p class="desc">Interactive screencasts to build your first React app.</p><a href="https://scrimba.com/learn/learnreact" target="_blank" class="btn-block btn-outline">Start Course</a><button class="btn-block btn-save" data-title="Scrimba React">+ Save to Dashboard</button></div>
+                        <div class="opportunity-card"><div class="card-badge bg-accent">Codecademy</div><h3>Learn HTML & CSS</h3><p class="desc">Interactive coding environment for absolute beginners.</p><a href="https://www.codecademy.com/" target="_blank" class="btn-block btn-outline">Start Course</a><button class="btn-block btn-save" data-title="Codecademy HTML">+ Save to Dashboard</button></div>
+                        <div class="opportunity-card"><div class="card-badge">Govt of India</div><h3>NPTEL: Database Management</h3><p class="desc">Core engineering CS concept taught by IIT professors.</p><a href="https://nptel.ac.in/" target="_blank" class="btn-block btn-outline">Start Course</a><button class="btn-block btn-save" data-title="NPTEL DBMS">+ Save to Dashboard</button></div>
+                        <div class="opportunity-card"><div class="card-badge bg-accent">Great Learning</div><h3>Data Structures in C++</h3><p class="desc">Free academy course to crack software interviews.</p><a href="https://www.mygreatlearning.com/" target="_blank" class="btn-block btn-outline">Start Course</a><button class="btn-block btn-save" data-title="Great Learning DSA">+ Save to Dashboard</button></div>
+                        <div class="opportunity-card"><div class="card-badge">Simplilearn</div><h3>Introduction to IoT</h3><p class="desc">Understand the Internet of Things and smart devices.</p><a href="https://www.simplilearn.com/" target="_blank" class="btn-block btn-outline">Start Course</a><button class="btn-block btn-save" data-title="Simplilearn IoT">+ Save to Dashboard</button></div>
+                        <div class="opportunity-card"><div class="card-badge bg-accent">Google Cloud</div><h3>Cloud Skills Boost</h3><p class="desc">Hands-on labs to learn GCP architecture and deployment.</p><a href="https://www.cloudskillsboost.google/" target="_blank" class="btn-block btn-outline">Start Course</a><button class="btn-block btn-save" data-title="Google Cloud Boost">+ Save to Dashboard</button></div>
+                        <div class="opportunity-card"><div class="card-badge">Udacity</div><h3>Version Control with Git</h3><p class="desc">Essential tool for every developer to manage code history.</p><a href="https://www.udacity.com/course/version-control-with-git--ud123" target="_blank" class="btn-block btn-outline">Start Course</a><button class="btn-block btn-save" data-title="Udacity Git">+ Save to Dashboard</button></div>
+                        <div class="opportunity-card"><div class="card-badge bg-accent">Udacity</div><h3>Intro to Operating Systems</h3><p class="desc">Advanced computer science concepts for systems engineering.</p><a href="https://www.udacity.com/" target="_blank" class="btn-block btn-outline">Start Course</a><button class="btn-block btn-save" data-title="Udacity OS">+ Save to Dashboard</button></div>
+                        <div class="opportunity-card"><div class="card-badge">LinkedIn</div><h3>Career Essentials in GenAI</h3><p class="desc">Learn prompt engineering and AI tools with Microsoft.</p><a href="https://learning.linkedin.com/" target="_blank" class="btn-block btn-outline">Start Course</a><button class="btn-block btn-save" data-title="LinkedIn GenAI">+ Save to Dashboard</button></div>
+                        <div class="opportunity-card"><div class="card-badge bg-accent">UpGrad</div><h3>Free Tech Bootcamp</h3><p class="desc">Short modules on blockchain, data, and management.</p><a href="https://www.upgrad.com/" target="_blank" class="btn-block btn-outline">Start Course</a><button class="btn-block btn-save" data-title="UpGrad Tech">+ Save to Dashboard</button></div>
+                        <div class="opportunity-card"><div class="card-badge">IBM</div><h3>Enterprise Design Thinking</h3><p class="desc">Earn a practitioner badge in solving user problems.</p><a href="https://www.ibm.com/design/thinking/" target="_blank" class="btn-block btn-outline">Start Course</a><button class="btn-block btn-save" data-title="IBM Design Thinking">+ Save to Dashboard</button></div>
+                        <div class="opportunity-card"><div class="card-badge bg-accent">Postman</div><h3>API Fundamentals Student Expert</h3><p class="desc">Learn how to build and test web APIs like a pro.</p><a href="https://academy.postman.com/" target="_blank" class="btn-block btn-outline">Start Course</a><button class="btn-block btn-save" data-title="Postman API Expert">+ Save to Dashboard</button></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ABOUT US SECTION -->
+            <section id="about" class="section-padding">
+                <div class="container" style="text-align: center; max-width: 800px;">
+                    <h2 class="section-title">About Us</h2>
+                    <p>
+                        Student Opportunity Hub was created to bridge the gap between talented students and life-changing opportunities. Finding the right internship, tracking down hackathons, navigating government scholarships, and hunting for free premium courses can be overwhelming. We bring everything into one unified, professional platform with a private dashboard so you never lose track of your goals.
+                    </p>
+                    
+                    <div class="creator-badge">
+                        <p>Created & Designed by Tanuja Rajolli</p>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="social-links-container">
+                        <a href="https://www.linkedin.com/in/tanuja-rajolli-463019394/" target="_blank" title="LinkedIn" class="social-icon-link"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://github.com/tanujarajolli527-prog" target="_blank" title="GitHub" class="social-icon-link"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://discord.com/users/1445386665819373638" target="_blank" title="Discord" class="social-icon-link"><i class="fa-brands fa-discord"></i></a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- 4. REDESIGNED DASHBOARD PAGE (SaaS Style)  -->
+        <!-- ========================================== -->
+        <section id="dashboard-section" style="display: none; background: var(--bg-color); min-height: 100vh; padding-top: 3rem; padding-bottom: 5rem;">
+            <div class="container dashboard-layout">
+                
+                <!-- Dashboard Sidebar Profile -->
+                <aside class="dashboard-sidebar">
+                    <div class="profile-card">
+                        <div class="avatar-container">
+                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Tanuja&backgroundColor=e0f2fe" alt="Tanuja Rajoli" class="avatar-img">
+                        </div>
+                        <h3 id="dash-name">Tanuja Rajoli</h3>
+                        <p id="dash-email" style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1.5rem;">student@email.com</p>
+                        
+                        <div class="dash-stat-box">
+                            <span id="saved-count">0</span>
+                            <p>Saved Opportunities</p>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Dashboard Main Content -->
+                <main class="dashboard-main">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 1rem;">
+                        <h2 style="color: var(--primary-color); font-size: 1.8rem;">My Dashboard</h2>
+                    </div>
+
+                    <!-- Dashboard Cards Grid -->
+                    <div id="saved-items-list" class="grid-2">
+                        <p style="grid-column: 1/-1; color: var(--text-light); font-size: 1.1rem; padding: 2rem; background: white; border-radius: 12px; text-align: center; border: 1px dashed #cbd5e1;">Loading your saved items...</p>
+                    </div>
+                </main>
+
+            </div>
+        </section>
+        
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

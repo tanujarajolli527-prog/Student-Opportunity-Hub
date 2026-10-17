@@ -1,0 +1,209 @@
+/* ==================================================
+   VARIABLES (PROFESSIONAL NAVY & SLATE THEME)
+================================================== */
+:root {
+    --primary-color: #0F172A; /* Deep Navy Blue / Slate 900 */
+    --secondary-color: #2563EB; /* Trustworthy Professional Blue */
+    --accent-color: #38BDF8; /* Light Blue Accent */
+    --bg-color: #F8FAFC; /* Clean Slate 50 Background */
+    --card-bg: #FFFFFF;
+    --text-color: #1E293B; /* Slate 800 */
+    --text-light: #64748B; /* Slate 500 */
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; color: var(--text-color); background-color: var(--card-bg); line-height: 1.6; }
+a { text-decoration: none; color: inherit; transition: var(--transition); }
+ul { list-style: none; }
+
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+.section-padding { padding: 5rem 0; }
+.bg-light { background-color: var(--bg-color); }
+h1, h2, h3 { font-weight: 700; line-height: 1.2; color: var(--primary-color); }
+.section-title { text-align: center; font-size: 2.2rem; margin-bottom: 0.5rem; }
+
+/* ==================================================
+   NAVIGATION BAR
+================================================== */
+.navbar { position: sticky; top: 0; background-color: var(--card-bg); box-shadow: 0 1px 3px rgba(0,0,0,0.05); z-index: 1000; padding: 1rem 0; border-bottom: 1px solid #e2e8f0; }
+.nav-container { width: 90%; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.logo { display: flex; align-items: center; gap: 0.5rem; font-size: 1.5rem; font-weight: 700; color: var(--primary-color); }
+.logo i { color: var(--secondary-color); }
+.nav-links { display: flex; align-items: center; gap: 1.5rem; }
+.nav-links a { font-weight: 500; color: var(--text-color); font-size: 0.95rem; }
+.nav-links a:hover { color: var(--secondary-color); }
+.nav-toggle, .nav-toggle-label { display: none; }
+
+/* ==================================================
+   BUTTONS
+================================================== */
+.btn-primary { background-color: var(--secondary-color); color: white; padding: 0.8rem 1.5rem; border-radius: 6px; font-weight: 600; display: inline-block; border: 2px solid var(--secondary-color); cursor: pointer; transition: var(--transition);}
+.btn-primary:hover { background-color: #1D4ED8; border-color: #1D4ED8; }
+.btn-outline { background-color: transparent; color: var(--secondary-color); padding: 0.8rem 1.5rem; border-radius: 6px; font-weight: 600; display: inline-block; border: 2px solid var(--secondary-color); cursor: pointer; transition: var(--transition);}
+.btn-outline:hover { background-color: #EFF6FF; }
+.btn-block { display: block; width: 100%; text-align: center; padding: 0.8rem; border-radius: 6px; background-color: var(--bg-color); color: var(--secondary-color); font-weight: 600; border: 1px solid #cbd5e1; cursor: pointer; transition: var(--transition);}
+.btn-block:hover { background-color: #EFF6FF; border-color: var(--secondary-color); }
+.btn-save { cursor: pointer; border: none; padding: 10px; border-radius: 6px; width: 100%; font-weight: 600; transition: var(--transition); background-color: var(--primary-color); color: white; margin-top: 10px;}
+.btn-save:hover { background-color: var(--text-color); }
+
+/* ==================================================
+   HERO 
+================================================== */
+.hero { background: linear-gradient(135deg, var(--bg-color) 0%, #E2E8F0 100%); padding: 7rem 0; text-align: center; border-bottom: 1px solid #cbd5e1; }
+.hero h1 { font-size: 3.5rem; margin-bottom: 1.5rem; letter-spacing: -0.02em; }
+.hero .highlight { color: var(--secondary-color); }
+.hero p { font-size: 1.2rem; color: var(--text-light); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+/* ==================================================
+   GRIDS & CARDS
+================================================== */
+.grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+
+.category-card { background: var(--card-bg); padding: 2rem; border-radius: 12px; text-align: center; box-shadow: var(--shadow); transition: var(--transition); border: 1px solid #e2e8f0; }
+.category-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--accent-color); }
+.category-card .icon-wrapper { margin: 0 auto 1.5rem auto; }
+.category-card .icon-wrapper i { font-size: 2.5rem; color: var(--secondary-color); }
+.category-card .card-link { font-size: 0.9rem; font-weight: 600; color: var(--secondary-color); margin-top: 10px; display: inline-block; }
+
+.opportunity-card { background: var(--card-bg); padding: 2rem; border-radius: 12px; box-shadow: var(--shadow); border: 1px solid #e2e8f0; display: flex; flex-direction: column; transition: var(--transition); }
+.opportunity-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); border-color: var(--secondary-color); }
+.card-badge { align-self: flex-start; background-color: #F1F5F9; color: var(--primary-color); padding: 0.3rem 0.8rem; border-radius: 6px; font-size: 0.75rem; font-weight: 600; margin-bottom: 1rem; border: 1px solid #cbd5e1; text-transform: uppercase; letter-spacing: 0.5px; }
+.bg-accent { background-color: #EFF6FF; color: var(--secondary-color); border-color: #BFDBFE; }
+.opportunity-card h3 { font-size: 1.25rem; margin-bottom: 0.8rem; color: var(--primary-color); }
+.opportunity-card .desc { margin-bottom: 1.5rem; font-size: 0.95rem; color: var(--text-light); flex-grow: 1; }
+
+/* ==================================================
+   FULL SCREEN LOGIN PAGE (GATEKEEPER)
+================================================== */
+.auth-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1E293B 100%);
+    z-index: 9999;
+}
+.auth-card { background: white; padding: 3rem 2.5rem; border-radius: 12px; width: 100%; max-width: 400px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); text-align: center; }
+.auth-header { margin-bottom: 1rem; }
+.auth-icon { font-size: 2.5rem; color: var(--secondary-color); margin-bottom: 1rem; }
+.auth-subtitle { color: var(--text-light); font-size: 0.95rem; margin-bottom: 2rem; }
+.auth-form input { width: 100%; padding: 1rem; margin-bottom: 1rem; border: 1px solid #cbd5e1; border-radius: 6px; font-family: inherit; font-size: 1rem; transition: all 0.3s ease; background-color: var(--bg-color); }
+.auth-form input:focus { outline: none; border-color: var(--secondary-color); box-shadow: 0 0 0 3px #DBEAFE; background-color: white; }
+.auth-btn { width: 100%; padding: 1rem; font-size: 1rem; border: none; margin-top: 0.5rem; border-radius: 6px; }
+.error-text { color: #ef4444; font-size: 13px; margin-top: 15px; font-weight: 500; }
+
+/* ==================================================
+   REDESIGNED DASHBOARD (SAAS PORTAL STYLE)
+================================================== */
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.profile-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    border: 1px solid #e2e8f0;
+}
+
+.avatar-container { margin-bottom: 1.5rem; }
+.avatar-img { width: 120px; height: 120px; border-radius: 50%; border: 4px solid #EFF6FF; background-color: #F8FAFC; }
+
+.dash-stat-box {
+    background: var(--bg-color);
+    border: 1px solid #e2e8f0;
+    padding: 1.5rem 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+.dash-stat-box span { display: block; font-size: 2.5rem; font-weight: 700; color: var(--secondary-color); line-height: 1; margin-bottom: 5px; }
+.dash-stat-box p { font-size: 0.85rem; color: var(--text-light); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin: 0; }
+
+.remove-btn { background: #FEE2E2; border: 1px solid #FECACA; color: #EF4444; width: 30px; height: 30px; border-radius: 50%; font-size: 0.9rem; cursor: pointer; transition: var(--transition); display: flex; justify-content: center; align-items: center; }
+.remove-btn:hover { background: #EF4444; color: white; border-color: #EF4444; }
+
+/* ==================================================
+   ABOUT US SECTION & SOCIAL LINKS STYLING
+================================================== */
+#about {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#about .section-title {
+    color: white;
+}
+
+#about p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+    line-height: 1.8;
+}
+
+.creator-badge {
+    display: inline-block;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 25px;
+}
+
+.creator-badge p {
+    font-weight: 600;
+    color: var(--accent-color);
+    margin: 0;
+}
+
+.social-links-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-icon-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    font-size: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: var(--transition);
+}
+
+.social-icon-link:hover {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+/* ==================================================
+   MOBILE RESPONSIVENESS
+================================================== */
+@media (max-width: 992px) {
+    .nav-toggle-label { display: block; cursor: pointer; font-size: 1.5rem; color: var(--primary-color); }
+    .nav-links { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--card-bg); flex-direction: column; padding: 1rem 0; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-bottom: 1px solid #e2e8f0; }
+    .nav-toggle:checked ~ .nav-links { display: flex; }
+    .hero h1 { font-size: 2.5rem; }
+    .dashboard-layout { grid-template-columns: 1fr; gap: 2rem; }
+}
