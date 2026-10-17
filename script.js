@@ -4,12 +4,12 @@ import { getFirestore, doc, setDoc, getDoc, collection, addDoc, query, where, ge
 
 // PASTE YOUR REAL FIREBASE KEYS HERE
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY_HERE",
-    authDomain: "your-project.firebaseapp.com",
-    projectId: "your-project-id",
-    storageBucket: "your-project.appspot.com",
-    messagingSenderId: "your-sender-id",
-    appId: "your-app-id"
+  apiKey: "AIzaSyDIFWPCmUFzhvHtzMvs3Lh_g2YKI4qvXyg",
+  authDomain: "student-opportunity-club.firebaseapp.com",
+  projectId: "student-opportunity-club",
+  storageBucket: "student-opportunity-club.firebasestorage.app",
+  messagingSenderId: "658260620948",
+  appId: "1:658260620948:web:312fa564dcb1a94738e681"
 };
 
 const app = initializeApp(firebaseConfig);
